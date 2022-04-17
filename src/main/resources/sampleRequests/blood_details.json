@@ -1,0 +1,11 @@
+{
+  "donationDate":"15/04/2021",
+  "bloodGroup":"B+",
+  "donor":"Yes",
+  "quantity":2,
+  "status":"completed",
+  "user": {
+    "userId":1
+  }
+
+}
