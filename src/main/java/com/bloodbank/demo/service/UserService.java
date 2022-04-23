@@ -1,5 +1,6 @@
 package com.bloodbank.demo.service;
 
+import com.bloodbank.demo.model.BloodDetails;
 import com.bloodbank.demo.model.User;
 import com.bloodbank.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,15 @@ public class UserService {
 
     public List<User> getAllUsers(){
         return userRepository.findAll();
+    }
+
+    public void deleteById(Long id){
+        Optional<User> user = userRepository.findById(id);
+        if(user.isPresent()){
+            userRepository.deleteById(id);
+        }else {
+            throw new RuntimeException("BloodDetails does not exist");
+        }
     }
 
 

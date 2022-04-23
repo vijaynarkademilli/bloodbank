@@ -2,6 +2,7 @@ package com.bloodbank.demo.controller;
 
 import com.bloodbank.demo.model.BloodDetails;
 import com.bloodbank.demo.model.Order;
+import com.bloodbank.demo.model.OrderUpdateModel;
 import com.bloodbank.demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,10 +27,21 @@ public class OrderController {
     }
 
     @PostMapping("/saveOrderDetails")
-    public ResponseEntity<BloodDetails> saveBloodDetails(@RequestBody Order order){
+    public ResponseEntity<Order> saveOrderDetails(@RequestBody Order order){
         orderService.saveOrderDetails(order);
         return ResponseEntity.ok().build();
     }
 
+
+    @PutMapping("/updateOrderDetails")
+    public ResponseEntity<BloodDetails> updateOrderDetails(@RequestBody OrderUpdateModel order){
+        orderService.updateOrderDetails(order);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/deleteOrder/{orderId}")
+    public void deleteOrder(@PathVariable("orderId") Long orderId){
+        orderService.deleteById(orderId);
+    }
 
 }

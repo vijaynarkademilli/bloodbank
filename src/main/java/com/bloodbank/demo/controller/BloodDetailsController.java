@@ -1,6 +1,7 @@
 package com.bloodbank.demo.controller;
 
 import com.bloodbank.demo.model.BloodDetails;
+import com.bloodbank.demo.model.BloodDetailsUpdateModel;
 import com.bloodbank.demo.service.BloodDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,17 @@ public class BloodDetailsController {
     @GetMapping("/getAllBloodDetails")
     public List<BloodDetails> getAllBloodDetails(){
         return bloodDetailsService.findAllBloodDetails();
+    }
+
+    @PutMapping("/updateBloodDetails")
+    public ResponseEntity<BloodDetails> updateBloodDetails(@RequestBody BloodDetailsUpdateModel bloodDetails){
+        bloodDetailsService.updateBloodDetails(bloodDetails);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/deleteBloodDetails/{bloodDetailsId}")
+    public void deleteOrder(@PathVariable("bloodDetailsId") Long bloodDetailsId){
+        bloodDetailsService.deleteById(bloodDetailsId);
     }
 
 
