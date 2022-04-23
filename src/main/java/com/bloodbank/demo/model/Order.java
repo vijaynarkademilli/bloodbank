@@ -34,8 +34,8 @@ public class Order {
     @Column(name = "transfusion_date")
     private String transfusionDate;
 
-
-
-
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }

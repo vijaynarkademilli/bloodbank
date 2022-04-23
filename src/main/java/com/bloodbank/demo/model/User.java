@@ -49,5 +49,8 @@ public class User implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private Set<BloodDetails> bloodDetails = new HashSet<>();
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Order> orderDetails = new HashSet<>();
+
 
 }
