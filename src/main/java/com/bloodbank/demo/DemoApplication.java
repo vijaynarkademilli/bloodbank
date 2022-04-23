@@ -16,7 +16,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurerAdapter() {
 			@Override
@@ -27,7 +27,7 @@ public class DemoApplication {
 				registry.addMapping("/getUserProfile/{userId}").allowedMethods("*").allowedOrigins("*");
 			}
 		};
-	}
+	}*/
 
 
 }

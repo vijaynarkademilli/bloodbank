@@ -47,7 +47,6 @@ public class User implements Serializable {
     private String pin;
 
     @OneToMany(cascade = CascadeType.ALL)
-    /*@JoinColumn(name = "blood_id")*/
     private Set<BloodDetails> bloodDetails = new HashSet<>();
 
 

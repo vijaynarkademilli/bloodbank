@@ -16,17 +16,25 @@ public class Order {
     @Column(name = "order_id")
     private Long orderId;
 
-    @Column(name = "order_date")
-    private String orderDate;
-
-    @Column(name = "price")
-    private Long price;
+    @Column(name = "blood_group")
+    private String bloodGroup;
 
     @Column(name = "status")
     private String status;
 
     @Column(name = "recipient")
     private String recipient;
+
+    @Column(name = "price")
+    private Long price;
+
+    @Column(name = "order_date")
+    private String orderDate;
+
+    @Column(name = "transfusion_date")
+    private String transfusionDate;
+
+
 
 
 
