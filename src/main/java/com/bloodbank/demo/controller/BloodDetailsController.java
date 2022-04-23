@@ -25,6 +25,10 @@ public class BloodDetailsController {
         return bloodDetailsService.findByBloodGroup(bloodGroup);
     }
 
+    @GetMapping("/getAllBloodDetails")
+    public List<BloodDetails> getAllBloodDetails(){
+        return bloodDetailsService.findAllBloodDetails();
+    }
 
 
 }

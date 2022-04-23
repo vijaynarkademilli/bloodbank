@@ -35,5 +35,8 @@ public class BloodDetailsService {
         return bloodDetailsRepository.findByBloodGroup(bloodGroup);
     }
 
+    public List<BloodDetails> findAllBloodDetails(){
+        return bloodDetailsRepository.findAll();
+    }
 
 }
